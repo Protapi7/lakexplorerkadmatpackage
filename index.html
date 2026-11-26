@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lakexplorer | Kadmat &amp; Amini, Lakshadweep</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<header class="nav"><a class="logo" href="#top" data-bind="brand"></a>
+<nav><a href="#overview">Overview</a><a href="#itinerary">Itinerary</a><a href="#travel">Travel</a><a href="#package">Package</a><a href="#terms">Terms</a><a href="#enquire">Contact</a></nav></header>
+<main id="top">
+<section class="hero"><div class="panel rv">
+<div class="eyebrow" data-bind="hero.eyebrow"></div>
+<h1 data-bind="hero.title"></h1>
+<p class="lead" data-bind="hero.text"></p>
+<div class="chips" id="chips"></div>
+<a class="btn" href="#itinerary">View itinerary</a><a class="btn ghost" href="#enquire">Plan my trip</a>
+</div></section>
+<section id="overview"><h2 class="rv" data-bind="headings.overview"></h2><div class="grid" id="overviewCards"></div></section>
+<section id="itinerary"><div class="panel rv"><h2 data-bind="headings.itinerary"></h2>
+<div class="tabs" role="tablist" id="tabs"></div><div id="day" role="tabpanel" aria-live="polite"></div>
+<h3 class="sub">Optional activities</h3><ul id="optional"></ul></div></section>
+<section id="travel"><h2 class="rv" data-bind="headings.travel"></h2><p class="lead rv" data-bind="travelIntro"></p>
+<div class="grid" id="routes"></div>
+<div class="panel rv" style="margin-top:18px"><h3 class="sub" data-bind="connectionAdviceTitle"></h3><p class="lead" data-bind="connectionAdvice"></p><a class="btn" id="adviceWa" target="_blank" rel="noopener" hidden>Ask us on WhatsApp</a></div>
+<div class="panel rv" style="margin-top:18px"><h3 class="sub">Vessel-delay contingencies</h3><ul id="contingencies"></ul></div></section>
+<section id="package"><h2 class="rv" data-bind="headings.package"></h2>
+<div class="two"><div class="card rv"><h3>Inclusions</h3><ul id="inclusions"></ul></div><div class="card rv"><h3>Exclusions</h3><ul id="exclusions"></ul></div></div></section>
+<section id="terms"><h2 class="rv" data-bind="headings.terms"></h2>
+<div class="two"><div class="card rv"><h3>Documents required</h3><ul id="documents"></ul></div><div class="card rv"><h3>Guidelines</h3><ul id="terms-list"></ul></div></div></section>
+<section id="enquire"><div class="panel rv"><h2 data-bind="headings.enquire"></h2>
+<div class="grid" id="contactCards"></div>
+<h3 class="sub">Tell us what you need</h3><p class="note">Fill in your details and send them to us on WhatsApp. Not sure which connection to take? Choose “Not sure” and we will suggest the best one.</p>
+<form id="f">
+<label>Lead traveller name<input name="Name" autocomplete="name"></label>
+<label>Phone / WhatsApp<input name="Phone" type="tel" autocomplete="tel"></label>
+<label>Email<input name="Email" type="email" autocomplete="email"></label>
+<label>Number of travellers<input name="Travellers" type="number" min="1" value="2"></label>
+<label>Arrival date<input name="Arrival date" type="date"></label>
+<label>Departure date<input name="Departure date" type="date"></label>
+<label>Arrival point<select name="Arrival point" id="selArr"></select></label>
+<label>Departure point<select name="Departure point" id="selDep"></select></label>
+<label>Ship / flight tickets<select name="Tickets"><option>Not booked yet</option><option>Already booked</option><option>Not sure</option></select></label>
+<label class="full">Traveller names, ages and ID types<textarea name="Travellers list" rows="3"></textarea></label>
+<label class="full">Special requests<textarea name="Requests" rows="2"></textarea></label>
+<div class="full actions"><button class="btn" type="button" id="sendWa">Send on WhatsApp</button><button class="btn" type="button" id="sendWa2" hidden>WhatsApp (2nd number)</button><button class="btn ghost" type="button" id="sendMail">Send by email</button><button class="btn ghost" type="button" id="copy">Copy summary</button></div>
+</form></div></section>
+</main>
+<footer><span><span data-bind="brand"></span> | <a href="#admin" id="adminLink">Admin</a></span></footer>
+<a id="waFloat" class="wa" hidden target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+<div id="toast" role="status"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="content.js"></script>
+<script src="scene.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
